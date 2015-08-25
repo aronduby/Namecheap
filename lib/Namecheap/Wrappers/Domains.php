@@ -13,7 +13,7 @@ use Namecheap\Api\Domains\Domains as ApiDomains;
 use Namecheap\Api\Domains\Ns;
 use Namecheap\Api\Domains\Transfer;
 
-class Domains extends Base
+class Domains extends ApiDomains
 {
 
 	/**
@@ -24,16 +24,6 @@ class Domains extends Base
 	public function dns()
 	{
 		return new Dns($this->client);
-	}
-
-	/**
-	 * Return an instance of the Domains class
-	 *
-	 * @return ApiDomains
-	 */
-	public function domains()
-	{
-		return new ApiDomains($this->client);
 	}
 
 	/**

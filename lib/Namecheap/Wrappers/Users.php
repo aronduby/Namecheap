@@ -12,7 +12,7 @@ namespace Namecheap\Wrappers;
 use Namecheap\Users\Address;
 use Namecheap\Users\Users as ApiUsers;
 
-class Users extends Base
+class Users extends ApiUsers
 {
 	/**
 	 * Get an instance of the Address class
@@ -24,13 +24,4 @@ class Users extends Base
 		return new Address($this->client);
 	}
 
-	/**
-	 * Get an instance of the Users class
-	 *
-	 * @return ApiUsers
-	 */
-	public function users()
-	{
-		return new ApiUsers($this->client);
-	}
 }
