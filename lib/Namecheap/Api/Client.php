@@ -99,8 +99,6 @@ class Client
             'url' => $this->api_url,
             'params' => $params
         );
-
-		var_dump($this->request);
         
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->api_url);
