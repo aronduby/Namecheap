@@ -1,14 +1,17 @@
 <?php
-namespace Namecheap\Users;
+namespace Namecheap\Api;
 
-use Namecheap\Api\Namecheap;
+use Namecheap\Base;
+use Namecheap\Response;
+
+use Namecheap\Api\Users\Address;
 
 /**
  * An instance of this class represents the namecheap users set of APIs
  *
  * @author Steve Oliveira <steve@vougalabs.com>
  */
-class Users extends Namecheap
+class Users extends Base
 {
 
     /**
@@ -17,6 +20,20 @@ class Users extends Namecheap
      */
     private $namespace = 'namecheap.users.';
 
+
+
+	/**
+	 * Get an instance of the Address class
+	 *
+	 * @return Address
+	 */
+	public function address()
+	{
+		return new Address($this->client);
+	}
+
+
+
     /**
      * Creates a new user account at NameCheap under this ApiUser.
      *
@@ -24,7 +41,7 @@ class Users extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:users:create
      */
     public function create(array $params)
@@ -37,7 +54,7 @@ class Users extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:users:getpricing
      */
     public function getPricing(array $params)
@@ -53,7 +70,7 @@ class Users extends Namecheap
      * attribute shows the amount needed in your NameCheap account to complete auto renewal.
      *
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:users:getbalances
      */
     public function getBalances()
@@ -66,7 +83,7 @@ class Users extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:users:changepassword
      */
     public function changePassword(array $params)
@@ -79,7 +96,7 @@ class Users extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:users:update
      */
     public function update(array $params)

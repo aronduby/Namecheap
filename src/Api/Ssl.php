@@ -1,14 +1,15 @@
 <?php
-namespace Namecheap\Ssl;
+namespace Namecheap\Api;
 
-use Namecheap\Api\Namecheap;
+use Namecheap\Base;
+use Namecheap\Response;
 
 /**
  * An instance of this class represents the namecheap SSL set of APIs
  *
  * @author Steve Oliveira <steve@vougalabs.com>
  */
-class Ssl extends Namecheap
+class Ssl extends Base
 {
     /**
      * @var string
@@ -20,7 +21,7 @@ class Ssl extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:ssl:activate
      */
     public function activate(array $params)
@@ -31,10 +32,9 @@ class Ssl extends Namecheap
     /**
      * Retrieves information about the requested SSL certificate
      *
-     * @param
-     *            s array $params
+     * @params array $params
      *            
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:ssl:getinfo
      */
     public function getInfo($params)
@@ -47,7 +47,7 @@ class Ssl extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:ssl:parsecsr
      */
     public function parseCSR(array $params)
@@ -60,7 +60,7 @@ class Ssl extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:ssl:getapproveremaillist
      */
     public function getApproverEmailList(array $params)
@@ -73,7 +73,7 @@ class Ssl extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:ssl:getlist
      */
     public function getList(array $params)
@@ -86,7 +86,7 @@ class Ssl extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:ssl:create
      */
     public function create(array $params)

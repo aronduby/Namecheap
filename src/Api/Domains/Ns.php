@@ -1,14 +1,15 @@
 <?php
 namespace Namecheap\Api\Domains;
 
-use Namecheap\Api\Namecheap;
+use Namecheap\Base;
+use Namecheap\Response;
 
 /**
  * An instance of this class represents the namecheap Domain NS set of APIs
  *
  * @author Steve Oliveira <steve@vougalabs.com>
  */
-class Ns extends Namecheap
+class Ns extends Base
 {
     /**
      * @var string
@@ -20,7 +21,7 @@ class Ns extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:domains.ns:create
      */
     public function create(array $params)
@@ -33,7 +34,7 @@ class Ns extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:domains.ns:delete
      */
     public function delete(array $params)
@@ -46,7 +47,7 @@ class Ns extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:domains.ns:getinfo
      */
     public function getInfo(array $params)
@@ -59,7 +60,7 @@ class Ns extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:domains.ns:update
      */
     public function update(array $params)

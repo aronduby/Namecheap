@@ -1,25 +1,28 @@
 <?php
-namespace Namecheap\Whoisguard;
+namespace Namecheap\Api;
 
-use Namecheap\Api\Namecheap;
+use Namecheap\Base;
+use Namecheap\Response;
 
 /**
  * An instance of this class represents the namecheap Whoisguard set of APIs
  *
  * @author Steve Oliveira <steve@vougalabs.com>
  */
-class Whoisguard extends Namecheap
+class Whoisguard extends Base
 {
     /**
      * @var string
      */
     private $namespace = 'namecheap.whoisguard.';
+
+
     /**
      * Allots WhoisGuard privacy protection
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:whoisguard:allot
      */
     public function allot(array $params)
@@ -32,7 +35,7 @@ class Whoisguard extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:whoisguard:changeemailaddress
      */
     public function changeEmailAddress(array $params)
@@ -45,7 +48,7 @@ class Whoisguard extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:whoisguard:disable
      */
     public function disable(array $params)
@@ -58,7 +61,7 @@ class Whoisguard extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:whoisguard:discard
      */
     public function discard(array $params)
@@ -71,7 +74,7 @@ class Whoisguard extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:whoisguard:enable
      */
     public function enable(array $params)
@@ -84,7 +87,7 @@ class Whoisguard extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:whoisguard:unallot
      */
     public function unallot(array $params)

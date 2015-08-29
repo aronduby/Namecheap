@@ -1,26 +1,65 @@
 <?php
-namespace Namecheap\Api\Domains;
+namespace Namecheap\Api;
 
-use Namecheap\Api\Namecheap;
+use Namecheap\Base;
+use Namecheap\Response;
+
+use Namecheap\Api\Domains\Dns;
+use Namecheap\Api\Domains\Ns;
+use Namecheap\Api\Domains\Transfer;
 
 /**
  * An instance of this class represents the namecheap Domain set of APIs
  *
- * @author Steve Oliveira <steve@vougalabs.com>
  */
-class Domains extends Namecheap
+class Domains extends Base
 {
-    /**
-     * @var string
-     */
-    private $namespace = 'namecheap.domains.';
+	/**
+	 * @var string
+	 */
+	private $namespace = 'namecheap.domains.';
+
+
+
+	/**
+	 * Return an instance of the Dns class
+	 *
+	 * @return Dns
+	 */
+	public function dns()
+	{
+		return new Dns($this->client);
+	}
+
+	/**
+	 * Return an instance of the Ns class
+	 *
+	 * @return Ns
+	 */
+	public function ns()
+	{
+		return new Ns($this->client);
+	}
+
+	/**
+	 * Return an instance of the Transfer class
+	 *
+	 * @return Transfer
+	 */
+	public function transfer()
+	{
+		return new Transfer($this->client);
+	}
+
+
+
 
     /**
      * Returns a list of domains for the particular user
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/get-list.aspx
      */
     public function getList(array $params = array())
@@ -31,7 +70,7 @@ class Domains extends Namecheap
     /**
      * Returns a list of tlds
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/get-tld-list.aspx
      */
     public function getTldList()
@@ -44,7 +83,7 @@ class Domains extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/create.aspx
      */
     public function create(array $params)
@@ -57,7 +96,7 @@ class Domains extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/get-contacts.aspx
      */
     public function getContacts(array $params)
@@ -70,7 +109,7 @@ class Domains extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/set-contacts.aspx
      */
     public function setContacts()
@@ -83,7 +122,7 @@ class Domains extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/check.aspx
      */
     public function check(array $params)
@@ -96,7 +135,7 @@ class Domains extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/reactivate.aspx
      */
     public function reactivate(array $params)
@@ -109,7 +148,7 @@ class Domains extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/renew.aspx
      */
     public function renew(array $params)
@@ -122,7 +161,7 @@ class Domains extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/get-registrar-lock.aspx
      */
     public function getRegistrarLock(array $params)
@@ -135,7 +174,7 @@ class Domains extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/set-registrar-lock.aspx
      */
     public function setRegistrarLock(array $params)
@@ -148,7 +187,7 @@ class Domains extends Namecheap
      *
      * @param array $params
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see https://www.namecheap.com/support/api/methods/domains/get-info.aspx
      */
     public function getInfo(array $params)

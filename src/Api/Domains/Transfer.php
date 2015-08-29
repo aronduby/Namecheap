@@ -1,14 +1,15 @@
 <?php
 namespace Namecheap\Api\Domains;
 
-use Namecheap\Api\Namecheap;
+use Namecheap\Base;
+use Namecheap\Response;
 
 /**
  * An instance of this class represents the namecheap Domain transfer set of APIs
  *
  * @author Steve Oliveira <steve@vougalabs.com>
  */
-class Transfer extends Namecheap
+class Transfer extends Base
 {
     /**
      * @var string
@@ -20,7 +21,7 @@ class Transfer extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:domains.transfer:create
      */
     public function create(array $params)
@@ -33,7 +34,7 @@ class Transfer extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:domains.transfer:getstatus
      */
     public function getStatus(array $params)
@@ -46,7 +47,7 @@ class Transfer extends Namecheap
      *
      * @param array $params            
      *
-     * @return \Namecheap\Api\Response
+     * @return Response
      * @see http://developer.namecheap.com/docs/doku.php?id=api-reference:domains.transfer:updatestatus
      */
     public function updateStatus(array $params)

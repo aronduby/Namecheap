@@ -1,21 +1,21 @@
 <?php
 
-namespace Namecheap\Api;
+namespace Namecheap;
 
 /**
-* Namecheap main class.
+* Namecheap base class.
 *
 * @package Namecheap
 * @author Steve Oliveira <steve@vougalabs.com>
 */
-abstract class Namecheap
+abstract class Base
 {
 	protected $client;
 	
 	/**
 	 * Sets the Namecheap client
 	 * 
-	 * @param Namecheap\Client $client
+	 * @param Client $client
 	 */
 	public function __construct(Client $client)
 	{
