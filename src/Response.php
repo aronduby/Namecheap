@@ -141,7 +141,7 @@ class Response
 	 */
 	public function getRequestUrl()
 	{
-		return $this->request['url'] . http_build_query($this->request['params']);
+		return $this->request['url'] . '?' . http_build_query($this->request['params']);
 	}
 
 	/**
