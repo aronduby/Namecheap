@@ -1,5 +1,5 @@
 {
-    "name": "namecheap/namecheap",
+    "name": "aronduby/namecheap",
     "type": "library",
     "description": "A PHP wrapper for the Namecheap API",
     "keywords": ["namecheap", "api"],
