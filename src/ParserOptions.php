@@ -3,6 +3,12 @@
 namespace Namecheap;
 
 
+/**
+ * Class ParserOptions
+ *
+ * @package Namecheap
+ * @see http://outlandish.com/blog/xml-to-json/
+ */
 class ParserOptions implements \ArrayAccess
 {
 	/**

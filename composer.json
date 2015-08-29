@@ -3,12 +3,15 @@
     "type": "library",
     "description": "A PHP wrapper for the Namecheap API",
     "keywords": ["namecheap", "api"],
-    "homepage": "http://www.vougalabs.com/opensource",
     "license": "MIT",
     "authors": [
         {
             "name": "Steve Oliveira",
             "email": "steve@vougalabs.com"
+        },
+        {
+          "name": "Aron Duby",
+          "email": "aron.duby@gmail.com"
         }
     ],
     "require": {

@@ -7,6 +7,14 @@ namespace Namecheap;
  */
 class Response
 {
+
+	/**
+	 * Was the request successful
+	 *
+	 * @var
+	 */
+	public $success;
+
 	/**
 	 * The raw xml string response
 	 *
@@ -42,6 +50,13 @@ class Response
 
 		try {
 			$this->xml = new \SimpleXMLElement($this->raw);
+			if($this->getStatus() === 'OK'){
+				$this->success = true;
+			} else {
+				$this->success = false;
+			}
+
+
 		} catch (\Exception $e) {
 			echo $e;
 		}
